@@ -1,25 +1,24 @@
 package com.literatura.LiterAlura.catalogo.service;
 
-
+import com.literatura.LiterAlura.catalogo.models.Livro;
+import com.literatura.LiterAlura.catalogo.repository.LivroRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
-
-import java.util.List;
+import reactor.core.publisher.Flux;
 
 @Service
 public class LivroService {
 
-    private final WebClient webClient;
+    @Autowired
+    private LivroRepository livroRepository; // Injeção de dependência
 
-    public LivroService(WebClient.Builder webClientBuilder) {
-        this.webClient = webClientBuilder.baseUrl("http://gutendex.com/books/").build();
+    public Flux<Livro> buscarLivros() {
+        // Aqui estamos retornando o Flux diretamente
+        return Flux.fromIterable(livroRepository.findAll()); // Converte List para Flux
     }
 
-    public Mono<List> buscarLivros() {
-        return webClient.get()
-                .uri("?language=pt&limit=10")
-                .retrieve()
-                .bodyToMono(List.class);
+    public Flux<Livro> buscarLivrosPorAutor(String autor) {
+        // Buscar livros por autor e converter para Flux
+        return Flux.fromIterable(livroRepository.findByAutor(autor)); // Converte List para Flux
     }
 }

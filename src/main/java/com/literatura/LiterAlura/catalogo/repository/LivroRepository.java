@@ -3,6 +3,9 @@ package com.literatura.LiterAlura.catalogo.repository;
 import com.literatura.LiterAlura.catalogo.models.Livro;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface LivroRepository extends JpaRepository<Livro, Long> {
+import java.util.List;
 
+public interface LivroRepository extends JpaRepository<Livro, Long> {
+    // Aqui você pode adicionar consultas personalizadas, se necessário
+    List<Livro> findByAutor(String autor); // Exemplo de consulta personalizada
 }
