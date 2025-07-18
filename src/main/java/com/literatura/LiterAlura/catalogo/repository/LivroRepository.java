@@ -1,11 +1,13 @@
 package com.literatura.LiterAlura.catalogo.repository;
 
-import com.literatura.LiterAlura.catalogo.models.Livro;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.literatura.LiterAlura.catalogo.models.Livro;  // Importa a classe Livro para interagir com a entidade
+import org.springframework.data.jpa.repository.JpaRepository;  // Importa JpaRepository, a interface do Spring Data JPA
 
-import java.util.List;
+import java.util.List;  // Importa List para retornar uma lista de objetos
 
+// A interface LivroRepository estende JpaRepository, que fornece métodos prontos para manipulação de dados no banco
 public interface LivroRepository extends JpaRepository<Livro, Long> {
-    // Aqui você pode adicionar consultas personalizadas, se necessário
-    List<Livro> findByAutor(String autor); // Exemplo de consulta personalizada
+
+    // Consulta livros pelo nome do autor
+    List<Livro> findByAutor_Nome(String nomeAutor);
 }
