@@ -1,7 +1,9 @@
 package com.literatura.LiterAlura.catalogo.models;
 
-
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
 @Entity
 public class Livro {
@@ -9,17 +11,21 @@ public class Livro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String titulo;
-
-    // Relacionamento ManyToOne com a entidade Autor
-    @ManyToOne
-    private Autor autor; // O campo 'autor' deve ser uma referência à entidade Autor
-
+    private String autor;
     private String idioma;
-    private Integer downloads;
+    private Double numeroDownloads;
 
-    // Getters and Setters
+    // Construtores, getters e setters
+    public Livro() {}
+
+    public Livro(String titulo, String autor, String idioma, Double numeroDownloads) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.idioma = idioma;
+        this.numeroDownloads = numeroDownloads;
+    }
+
     public Long getId() {
         return id;
     }
@@ -36,11 +42,11 @@ public class Livro {
         this.titulo = titulo;
     }
 
-    public Autor getAutor() {
+    public String getAutor() {
         return autor;
     }
 
-    public void setAutor(Autor autor) {
+    public void setAutor(String autor) {
         this.autor = autor;
     }
 
@@ -52,11 +58,11 @@ public class Livro {
         this.idioma = idioma;
     }
 
-    public Integer getDownloads() {
-        return downloads;
+    public Double getNumeroDownloads() {
+        return numeroDownloads;
     }
 
-    public void setDownloads(Integer downloads) {
-        this.downloads = downloads;
+    public void setNumeroDownloads(Double numeroDownloads) {
+        this.numeroDownloads = numeroDownloads;
     }
 }
