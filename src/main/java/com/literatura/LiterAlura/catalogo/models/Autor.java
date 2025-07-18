@@ -10,9 +10,10 @@ import jakarta.persistence.Id;
 public class Autor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)// Auto-increment
+    private Long id;//
 
+    // Attributes
     private String nome;
     private Integer anoNascimento;
     private Integer anoFalecimento;

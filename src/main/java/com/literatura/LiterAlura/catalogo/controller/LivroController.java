@@ -23,14 +23,14 @@ public class LivroController implements CommandLineRunner {
         // Loop infinito que mantém o menu ativo até que o usuário escolha sair
         while (true) {
             // Exibe as opções de menu para o usuário
-            System.out.println("==== CATALOGO DE LIVROS ====");
-            System.out.println("1 - Buscar livro pelo título");
-            System.out.println("2 - Listar livros registrados");
-            System.out.println("3 - Lista  autores registrados");
-            System.out.println("4 - Listar autores em determinado ano");
-            System.out.println("5 - Listar livros em determinado idioma");
-            System.out.println("0 - Sair");
-            System.out.print("Por favor, Escolha uma opção: ");
+            System.out.println("==== CATALOGO DE LIVROS ===="); // Exibe o cabeçalho do menu
+            System.out.println("1 - Buscar livro pelo título"); // Opção 1: Buscar livro pelo título
+            System.out.println("2 - Listar livros registrados"); // Opção 2: Listar livros registrados
+            System.out.println("3 - Lista  autores registrados"); // Opção 3: Listar autores registrados
+            System.out.println("4 - Listar autores em determinado ano"); // Opção 4: Listar autores em determinado ano
+            System.out.println("5 - Listar livros em determinado idioma"); // Opção 5: Listar livros em determinado idioma
+            System.out.println("0 - Sair"); // Opção 0: Sair
+            System.out.print("Por favor, Escolha uma opção: "); // Solicita ao usuário que escolha uma opção
 
 
             // Adiciona o tratamento de exceção para garantir que o usuário insira um número inteiro

@@ -1,5 +1,6 @@
 package com.literatura.LiterAlura.catalogo;
 
+import io.github.cdimascio.dotenv.Dotenv;  // Importa a classe Dotenv para carregar as variáveis de ambiente de um arquivo .env
 import org.springframework.boot.SpringApplication;  // Importa a classe SpringApplication para inicializar a aplicação Spring Boot
 import org.springframework.boot.autoconfigure.SpringBootApplication;  // Importa a anotação SpringBootApplication para marcar a classe como ponto de entrada
 
@@ -16,6 +17,9 @@ public class CatalagoLivrosApplication {
      */
     public static void main(String[] args) {
         // Chama o método run() para inicializar a aplicação Spring Boot
-        SpringApplication.run(CatalagoLivrosApplication.class, args);  // Inicia a aplicação Spring Boot com a classe CatalagoLivrosApplication como a configuração principal
+        SpringApplication.run(CatalagoLivrosApplication.class, args);
+        // Inicia a aplicação Spring Boot com a classe CatalagoLivrosApplication como a configuração principal
+
+
     }
 }

@@ -6,15 +6,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
 @Entity
-public class Livro {
+public class Livro { // Classe Livro
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String titulo;
-    private String autor;
-    private String idioma;
-    private Double numeroDownloads;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Atributo id
+    private Long id; // Atributo id
+    private String titulo; // Atributo titulo
+    private String autor; // Atributo autor
+    private String idioma; // Atributo idioma
+    private Double numeroDownloads; // Atributo numeroDownloads
 
     // Construtores, getters e setters
     public Livro() {}
@@ -26,6 +26,7 @@ public class Livro {
         this.numeroDownloads = numeroDownloads;
     }
 
+    // Getters e Setters
     public Long getId() {
         return id;
     }

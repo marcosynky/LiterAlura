@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface AutorRepository extends JpaRepository<Autor, Long> {
+public interface AutorRepository extends JpaRepository<Autor, Long> { //
 
     // Método para buscar autor por nome
     Optional<Autor> findByNome(String nome);
