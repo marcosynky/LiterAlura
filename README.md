@@ -35,7 +35,7 @@
 
 ![Progresso](https://img.shields.io/badge/Progresso-80%25-orange?style=for-the-badge&labelColor=000000&color=FF6600&logo=github)
 
-<p>Atualmente, cerca de 80% das funcionalidades estão implementadas.</p>
+<p>Atualmente, cerca de 100% das funcionalidades estão implementadas.</p>
 
 <h2>Autor</h2>
 <h3>Marco Antônio</h3>
