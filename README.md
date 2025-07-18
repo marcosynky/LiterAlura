@@ -33,7 +33,7 @@
 
 <h2>📊 Estado do Projeto</h2>
 
-![Progresso](https://img.shields.io/badge/Progresso-100%25-orange?style=for-the-badge&labelColor=000000&color=FF6600&logo=github)
+![Progresso](https://img.shields.io/badge/Progresso-100%25-green?style=for-the-badge&labelColor=000000&color=FF6600&logo=github)
 
 <p>Atualmente, cerca de 100% das funcionalidades estão implementadas.</p>
 
