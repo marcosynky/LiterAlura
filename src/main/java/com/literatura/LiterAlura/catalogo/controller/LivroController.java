@@ -24,12 +24,13 @@ public class LivroController implements CommandLineRunner {
         while (true) {
             // Exibe as opções de menu para o usuário
             System.out.println("==== CATALOGO DE LIVROS ====");
+            System.out.println("Escolha uma opção:");
             System.out.println("1 - Buscar livro pelo título");
             System.out.println("2 - Listar livros registrados");
-            System.out.println("3 - Lista nossos autores");
+            System.out.println("3 - Lista  autores registrados");
             System.out.println("4 - Listar autores em determinado ano");
             System.out.println("5 - Listar livros em determinado idioma");
-            System.out.println("6 - Sair");
+            System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
 
             // Adiciona o tratamento de exceção para garantir que o usuário insira um número inteiro

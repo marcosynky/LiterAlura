@@ -47,14 +47,7 @@ public class LivroService {
                     System.out.println("Busca terminada para o título: " + titulo);  // Mensagem ao finalizar a busca
                 })
                 .subscribe(response -> {
-                    // Processa a resposta da API
-                    try {
-                        // Exibe a resposta formatada no console
-                        String prettyJson = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(response);
-                        System.out.println("Resposta da API: " + prettyJson);  // Exibe o JSON formatado no console
-                    } catch (Exception e) {
-                        System.err.println("Erro ao formatar a resposta JSON: " + e.getMessage());
-                    }
+                    // Removemos a exibição do JSON completo
                     processarResposta(response);  // Chama o método para processar e exibir os dados
                 });
     }
@@ -62,17 +55,28 @@ public class LivroService {
     // Método para processar a resposta da API e exibir os livros
     private void processarResposta(JsonNode response) {
         JsonNode livrosNode = response.path("results");  // Supondo que o JSON retornado tenha uma chave "results"
+
         if (livrosNode.isArray() && livrosNode.size() > 0) {
-            System.out.println("Livros encontrados: ");
+            System.out.println("----- LIVRO -----");
             for (JsonNode livroNode : livrosNode) {
                 String titulo = livroNode.path("title").asText();
-                String autor = livroNode.path("author").asText();
-                System.out.println("Título: " + titulo + " | Autor: " + autor);
+                String autor = livroNode.path("authors").get(0).path("name").asText(); // Obtendo o nome do autor
+                String idioma = livroNode.path("languages").get(0).asText();  // Obtendo o idioma
+                double downloads = livroNode.path("download_count").asDouble();  // Obtendo o número de downloads
+
+                // Exibe os dados formatados conforme desejado
+                System.out.println("Título: " + titulo);
+                System.out.println("Autor: " + autor);
+                System.out.println("Idioma: " + idioma);
+                System.out.println("Número de downloads: " + downloads);
+                System.out.println("-----------------");
             }
         } else {
             System.out.println("Nenhum livro encontrado para o título especificado.");
         }
     }
+
+
 
     // Método para listar todos os livros registrados
     public Flux<Livro> listarLivros() {
